@@ -6,7 +6,7 @@
         type="text/css" />
 
     <style>
-        /* @import url(//db.onlinewebfonts.com/c/561f38b1f4570de0fb8a39d691ab058c?family=Tungsten+Bold); */
+        @import url(https://db.onlinewebfonts.com/c/561f38b1f4570de0fb8a39d691ab058c?family=Tungsten+Bold);
 
         @font-face {
             font-family: "Tungsten-Bold";
@@ -69,7 +69,7 @@
             position: relative;
             padding: 8px;
             margin-bottom: 20px;
-            text-align:center;
+            text-align: center;
         }
 
         .quote::before,
@@ -159,7 +159,13 @@
         }
 
         /*end btn style*/
+
+        .share {
+            display:none;
+        }
     </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7366160182072020"
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -175,9 +181,19 @@
                 </button>
             </div>
         </div>
+        <!-- Place this tag where you want the button to render. -->
+        <div class="share">
+            <a class="github-button" href="https://github.com/aphil/whydoisuckatvalorant"
+                data-color-scheme="no-preference: dark_dimmed; light: light; dark: dark;" data-size="large"
+                aria-label="Star aphil/whydoisuckatvalorant on GitHub">Star</a>
+            <a href="https://twitter.com/intent/tweet?button_hashtag=WhyDoISuckAtValorant&ref_src=twsrc%5Etfw"
+                class="twitter-hashtag-button" data-size="large" data-show-count="false"></a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
     </div>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script type="text/javascript">
-        (function() {
+        (function () {
             var reasons = [
                 "Your ping is too high",
                 "Bad crosshair placement",
@@ -186,12 +202,13 @@
                 "You haven't met JasonR's wife",
                 "Bad teammates",
                 "Team didn't trade you",
-                "You keep crouching",
+                "You keep crouching and spraying",
                 "You spray with vandal",
                 "Too much run and gun"
             ];
 
             document.getElementById("reason").innerText = reasons[Math.floor(Math.random() * reasons.length)];
+            document.getElementsByClassName("share")[0].style.display = "block";
         })();
     </script>
 </body>
