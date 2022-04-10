@@ -2,9 +2,6 @@
 <html>
 
 <head>
-    <link href="//db.onlinewebfonts.com/c/561f38b1f4570de0fb8a39d691ab058c?family=Tungsten+Bold" rel="stylesheet"
-        type="text/css" />
-
     <style>
         @import url(//db.onlinewebfonts.com/c/561f38b1f4570de0fb8a39d691ab058c?family=Tungsten+Bold);
 
@@ -161,11 +158,11 @@
         /*end btn style*/
 
         .share {
-            display:none;
+            display: none;
         }
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7366160182072020"
-    crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -207,8 +204,15 @@
                 "Too much run and gun"
             ];
 
-            document.getElementById("reason").innerText = reasons[Math.floor(Math.random() * reasons.length)];
+            function refresh() {
+                document.getElementById("reason").innerText = reasons[Math.floor(Math.random() * reasons.length)];
+            }
+
             document.getElementsByClassName("share")[0].style.display = "block";
+            document.getElementsByClassName("quote")[0].addEventListener("click", function() {
+                refresh();
+            });
+            refresh();
         })();
     </script>
 </body>
