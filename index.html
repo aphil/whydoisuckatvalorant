@@ -161,6 +161,15 @@
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7366160182072020"
         crossorigin="anonymous"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J697P7LN04"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-J697P7LN04');
+    </script>
 </head>
 
 <body>
@@ -233,7 +242,8 @@
                 "We all know you missed the dart",
                 "Stop instalocking duelist",
                 "You have no flashes",
-                "You're being to fancy with Omen teleports"
+                "You're being to fancy with Omen teleports",
+                "You don't buy your teammates"
             ];
 
             function refresh() {
@@ -241,7 +251,7 @@
             }
 
             document.getElementsByClassName("share")[0].style.display = "block";
-            document.getElementsByClassName("quote")[0].addEventListener("click", function() {
+            document.getElementsByClassName("quote")[0].addEventListener("click", function () {
                 refresh();
             });
             refresh();
