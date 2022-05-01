@@ -16,15 +16,18 @@ body {
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100%;
     color: #FD4556;
     font-family: Tungsten-Bold, arial, georgia, sans-serif;
     font-size: 5.5rem;
     text-transform: uppercase;
+}
+
+.mainPage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .title {
