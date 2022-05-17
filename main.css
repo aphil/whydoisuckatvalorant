@@ -19,7 +19,6 @@ body {
     color: #FD4556;
     font-family: Tungsten-Bold, arial, georgia, sans-serif;
     font-size: 5.5rem;
-    text-transform: uppercase;
 }
 
 .mainPage {
@@ -28,6 +27,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    text-transform: uppercase;
 }
 
 .title {
@@ -36,6 +37,91 @@ body {
     font-size: 3rem;
     font-weight: 400;
     text-transform: uppercase;
+}
+
+.arrow-down {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    width: 1.5rem;
+    -webkit-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    transform: translate(-50%);
+    cursor: pointer;
+}
+
+@-webkit-keyframes a {
+    0% {
+        -webkit-transform: translateY(-.35rem);
+        transform: translateY(-.35rem)
+    }
+
+    50% {
+        -webkit-transform: translateY(.35rem);
+        transform: translateY(.35rem)
+    }
+
+    to {
+        -webkit-transform: translateY(-.35rem);
+        transform: translateY(-.35rem)
+    }
+}
+
+@keyframes a {
+    0% {
+        -webkit-transform: translateY(-.35rem);
+        transform: translateY(-.35rem)
+    }
+
+    50% {
+        -webkit-transform: translateY(.35rem);
+        transform: translateY(.35rem)
+    }
+
+    to {
+        -webkit-transform: translateY(-.35rem);
+        transform: translateY(-.35rem)
+    }
+}
+
+.arrow-down svg {
+    fill: #ece8e1;
+    -webkit-animation: a 4s ease-in-out infinite;
+    animation: a 4s ease-in-out infinite;
+}
+
+.arrow-down svg:hover {
+    fill: #FD4556;
+}
+
+.aboutPage {
+    position: relative;
+    background-color: #ece8e1;
+}
+
+.about-title {
+    display:block;
+    padding-left: calc(8.33333% + 0.25rem);
+    color:#0f1923;
+    text-transform: uppercase;
+}
+
+.aboutPage p {
+    margin-left: calc(16.66667% + 0.5rem);
+    font-family: OpenSans,sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color:#768079;
+
+}
+
+[data-inviewport="slideUp"] {
+    transition: 2s;
+    transform: translateY(115%);
+}
+
+[data-inviewport="slideUp"].is-inViewport {
+    transform: translateY(0);
 }
 
 /*btn style source : https://codepen.io/Axiol/pen/mdeyWwQ */
