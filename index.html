@@ -42,14 +42,87 @@
                     class="twitter-hashtag-button" data-size="large" data-show-count="false"></a>
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
+            <div class="arrow-down"><svg class="js-arrowScrollDown arrowScrollDown" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 30 15.7">
+                    <path
+                        d="M3.2.7C2.8.3 2.6 0 2.1 0H.9C.2 0-.3.9.2 1.4l14 14c.5.4.9.4 1.2 0L29.8 1.1c.4-.5.1-1.1-.5-1.1H28c-.4 0-.8.1-1.1.5L15 12.5 3.2.7z">
+                    </path>
+                </svg></div>
         </div>
-        <!-- <div class="about">
-            about
-        </div> -->
+        <div class="about-page">
+            <span class="about-title" data-inViewport="slideUp">about</span>
+            <div class="about-page-content">
+                <div class="text-container">
+                    <p>
+                        I'm a 31 years old guy. <br />
+                        I suck at Valorant. <br />
+                        I've learned to accept it. I still love the game. Enough that I'll endure 13 year old kids
+                        bullying me in-game. <br />
+                        I've watched tons of videos on youtube guaranteeing results<br />
+                        I still suck.
+                    </p>
+                </div>
+                <div class="right-side">
+                    <div class="elem-improve-graph">
+                        <div class="elem-rank-improve-bar">
+                            <img class="css-1wi79nq"
+                                src="https://ik.imagekit.io/skillcapped/valorant-ranks/TX_CompetitiveTier_Large_9_3E5uA2ulu.png?tr=w-75"
+                                width="75.6">
+                            <div class="rank-bar"></div>
+                            <div class="time-rank-container">
+                                <div class="text-time">Start</div>
+                                <div class="text-rank">SILVER 1</div>
+                            </div>
+                        </div>
+                        <div class="elem-rank-improve-bar css-jp3r69">
+                            <img class="css-1wi79nq"
+                                src="https://ik.imagekit.io/skillcapped/valorant-ranks/TX_CompetitiveTier_Large_9_3E5uA2ulu.png?tr=w-75"
+                                width="75.6">
+                            <div class="rank-bar"></div>
+                            <div class="time-rank-container css-d6zxp7">
+                                <div class="text-time css-466e34">Month 1</div>
+                                <div class="text-rank css-18b13t8">SILVER 1</div>
+                            </div>
+                        </div>
+                        <div class="elem-rank-improve-bar css-jp3r69">
+                            <img class="css-1wi79nq"
+                                src="https://ik.imagekit.io/skillcapped/valorant-ranks/TX_CompetitiveTier_Large_9_3E5uA2ulu.png?tr=w-75"
+                                width="75.6">
+                            <div class="rank-bar"></div>
+                            <div class="time-rank-container css-d6zxp7">
+                                <div class="text-time css-466e34">Month 2</div>
+                                <div class="text-rank css-18b13t8">SILVER 1</div>
+                            </div>
+                        </div>
+                        <div class="elem-rank-improve-bar css-jp3r69">
+                            <img class="css-1wi79nq"
+                                src="https://ik.imagekit.io/skillcapped/valorant-ranks/TX_CompetitiveTier_Large_9_3E5uA2ulu.png?tr=w-75"
+                                width="75.6">
+                            <div class="rank-bar"></div>
+                            <div class="time-rank-container css-d6zxp7">
+                                <div class="text-time css-466e34">Month 3</div>
+                                <div class="text-rank css-18b13t8">SILVER 1</div>
+                            </div>
+                        </div>
+                        <div class="elem-rank-improve-bar css-jp3r69">
+                            <img class="css-1wi79nq"
+                                src="https://ik.imagekit.io/skillcapped/valorant-ranks/TX_CompetitiveTier_Large_9_3E5uA2ulu.png?tr=w-75"
+                                width="75.6">
+                            <div class="rank-bar"></div>
+                            <div class="time-rank-container css-d6zxp7">
+                                <div class="text-time css-466e34">Month 4</div>
+                                <div class="text-rank css-18b13t8">SILVER 1</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script type="text/javascript">
         (function () {
+            // fetch quotes
             if (window.fetch) {
                 fetch('quotes.txt').then(response => response.text()).then(function (result) {
                     var reasons = result.split(/\r?\n/);
@@ -67,6 +140,27 @@
             } else {
                 document.getElementById("reason").innerText = "Get a 21st century browser";
             }
+
+            // arrow scroll
+            document.getElementsByClassName("arrow-down")[0].addEventListener("click", function () {
+                document.getElementsByClassName("about-page")[0].scrollIntoView({ behavior: "smooth", block: "start" });
+            });
+
+            // animate titles
+            const inViewport = (entries, observer) => {
+                entries.forEach(entry => {
+                    entry.target.classList.toggle("is-inViewport", entry.isIntersecting);
+                });
+            };
+
+            const Obs = new IntersectionObserver(inViewport);
+            const obsOptions = {}; //See: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Intersection_observer_options
+
+            // Attach observer to every [data-inviewport] element:
+            const ELs_inViewport = document.querySelectorAll('[data-inviewport]');
+            ELs_inViewport.forEach(EL => {
+                Obs.observe(EL, obsOptions);
+            });
         })();
     </script>
 </body>
